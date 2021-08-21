@@ -6,7 +6,31 @@ function totalPriceCommonFun() {
 
     const totalPrice = parseInt(mainCost) + parseInt(memoryCost) + parseInt(storageCost) + parseInt(deliveCost);
 
-    document.getElementById('total-price').innerText = totalPrice;
+    const total = document.getElementById('total-price').innerText = totalPrice;
+
+    // start bonus part
+    const totalBonus = document.getElementById('totalPrice-bonus');
+    totalBonus.innerText = total;
+
+    // pin matched
+
+
+
+}
+
+function discount() {
+    const mainCost = document.getElementById('main-cost').innerText;
+    const memoryCost = document.getElementById('extra-memoryCost').innerText;
+    const storageCost = document.getElementById('storage-cost').innerText;
+    const deliveCost = document.getElementById('delivery-cost').innerText;
+
+    const totalPrice = parseInt(mainCost) + parseInt(memoryCost) + parseInt(storageCost) + parseInt(deliveCost);
+
+    const total = document.getElementById('total-price').innerText = totalPrice;
+
+
+
+
 
 }
 
@@ -73,6 +97,23 @@ document.getElementById('extradelvery-charge').addEventListener('click', functio
 
 
 
+});
+
+document.getElementById('apply-discount').addEventListener('click', function () {
+
+
+    discount()
+
+    // const discount = document.getElementById('discount');
+    // const discountMached = discount.value;
+
+    // if (discountMached == 'stevekaku') {
+    //     let matched = totalPriceCommonFun() / 20;
+
+    //     totalBonus.innerText = matched;
+    // } else {
+    //     totalPriceCommonFun()
+    // }
 })
 
 
