@@ -14,90 +14,73 @@
 <body>
     <header class="mt-5">
         <div class="container">
-            <div class="row gy-3 gx-3 d-flex align-items-center">
-                <div class="col-lg-5 ">
+            <div class="row">
+                <div class="col  p-4">
                     <img class="img-fluid" src="images/mac.png" alt="">
                 </div>
 
-                <div class="col-lg-7">
-                    <p class="fs-2">Coustomize Your Blue 24-inc</p>
-                    <p class="fs-2">iMac with Apple M1 Chip.</p><br>
-                    <p class="fs-5 text-muted">Apple M1 Chip with 8-core 4 performance cores and 4 efficiency cores,
+                <div class="col p-4">
+                    <h1>Coustomize Your Blue 24-inc</h1>
+                    <p>iMac with Apple M1 Chip.</p>
+                    <p>Apple M1 Chip with 8-core 4 performance cores and 4 efficiency cores,
                         7-cores GPU,
                         and 16 core
                         Nerural Engine 8gb unified Memory 256GB, SSD Storage Tow Thunderbolt / USB 4 ports Mgic Mouse,
                         Magic Keyboard- US English </p>
 
-                    <p class="fs-4">Memory</p>
-                    <button id="8gb-best" class=" btn btn-outline-warning text-dark mb-3">8Gb Unified memory</button>
-                    <button id="16gb-memory" class="btn btn-outline-secondary mb-3">16Gb Unified memory</button>
+                    <h6 class="mt-4">Memory</h6>
+                    <button id="8gb-best" class=" btn btn-outline-dark">8Gb Unified memory</button>
+                    <button id="16gb-memory" class="btn btn-outline-dark ">16Gb Unified memory</button>
 
-                    <p class="fs-4 mt-4">Storage</p>
+                    <h6 class="mt-4">Storage</h6>
+                    <button id="best-storage" class=" btn btn-outline-dark ">256Gb SSD Storage</button>
+                    <button id="extra-storageCost" class="btn btn-outline-dark ">512Gb SSD Storage</button>
+                    <button id="1tb-extra" class="btn btn-outline-dark">1TB SSD Storage</button>
 
-                    <button id="best-storage" class=" btn btn-outline-warning text-dark mb-3">256Gb SSD Storage</button>
-                    <button id="extra-storageCost" class="btn btn-outline-secondary mb-3">512Gb SSD Storage</button>
-                    <button id="1tb-extra" class="btn btn-outline-secondary mb-3">1TB SSD Storage</button>
-
-                    <p class="fs-4 mt-4">Chose Your Delivery option</p>
-
-                    <button id="shipping-cost" class="btn btn-outline-primary text-dark mb-3">Friday, Aug 25 FREE Prime
+                    <h6 class="mt-4">Chose Your Delivery option</h6>
+                    <button id="shipping-cost" class="btn btn-outline-dark">Friday, Aug 25 FREE Prime
                         Delivery</button>
-
-
-                    <button id="extradelvery-charge" class="btn btn-outline-danger text-dark mb-3">Friday, Aug 21
+                    <button id="extradelvery-charge" class="btn btn-outline-dark">Friday, Aug 21
                         Delivery Charge $20</button>
 
+                    <div class="w-50 mt-4">
+                        <div class="d-flex justify-content-between">
+                            <p class="fs-5"><span>Best Price </span></p>
+                            <p class="fs-5">$ <span id="main-cost">1299</span></p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p class="fs-5"><span>Extra Meroy Cost </span></p>
+                            <p class="fs-5">$ <span id="extra-memoryCost">0</span></p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p class="fs-5"><span>Extra Storage Cost </span></p>
+                            <p class="fs-5">$ <span id="storage-cost">0.</span></p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p class="fs-5"><span>Delivery Charge </span></p>
+                            <p class="fs-5">$ <span id="delivery-cost">0.</span></p>
+                        </div>
 
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <p class="fs-5"><span>Total Price </span></p>
+                            <p class="fs-5">$ <span id="total-price">1299</span></p>
+                        </div>
 
+                        <div class="bonus-part">
+                            <input id="cupon-input" type="text" placeholder="stevekaku">
+                            <button id="apply-discount" class="btn btn-sm btn-danger py-2 ">Apply</button>
 
-                    <div class="d-flex justify-content-between">
-                        <p class="fs-5"><span>Best Price </span></p>
-                        <p class="fs-5">$ <span id="main-cost">1299</span></p>
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-between">
-                        <p class="fs-5"><span>Extra Meroy Cost </span></p>
-                        <p class="fs-5">$ <span id="extra-memoryCost">0</span></p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <p class="fs-5"><span>Extra Storage Cost </span></p>
-                        <p class="fs-5">$ <span id="storage-cost">0.</span></p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <p class="fs-5"><span>Delivery Charge </span></p>
-                        <p class="fs-5">$ <span id="delivery-cost">0.</span></p>
-                    </div>
 
-                    <hr>
-
-                    <div class="d-flex justify-content-between">
-                        <p class="fs-5"><span>Total Price </span></p>
-                        <!-- <input onclick="updatePrice()" id="total-price" type="text" value="1299" disabled> -->
-                        <p class="fs-5">$ <span id="total-price">1299</span></p>
-                    </div>
-
-
-                    <!-- start bonus part -->
-                    <div class="bonus-part">
-                        <input id="cupon-input" type="text" placeholder="stevekaku">
-                        <button id="apply-discount" class="btn btn-sm btn-danger py-2 ">Apply</button>
-
-                    </div>
 
                     <hr class=" py-1">
-
-                    <!-- start  total price -->
 
                     <div>
                         <p class="fs-3">Total: $ <span id="totalPrice-bonus">1299</span>
                         </p>
                     </div>
-
-
-
-                    <!-- end total price  -->
-
-
-                    <!-- end bonus part -->
 
                     <br><br>
                 </div>
@@ -107,8 +90,6 @@
     <main>
 
     </main>
-
-    <!-- <script src="app.js"></script> -->
 
     <script src="app.js"></script>
 

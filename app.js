@@ -2,13 +2,13 @@ function totalPriceCommonFun() {
   const mainCost = document.getElementById("main-cost").innerText;
   const memoryCost = document.getElementById("extra-memoryCost").innerText;
   const storageCost = document.getElementById("storage-cost").innerText;
-  const deliveCost = document.getElementById("delivery-cost").innerText;
+  const deliveryCost = document.getElementById("delivery-cost").innerText;
 
   const totalPrice =
     parseInt(mainCost) +
     parseInt(memoryCost) +
     parseInt(storageCost) +
-    parseInt(deliveCost);
+    parseInt(deliveryCost);
 
   document.getElementById("total-price").innerText = totalPrice;
 
@@ -84,7 +84,6 @@ document
 
     if (cuponInput.value == "stevekaku") {
       const discount = (totalPrice * 20) / 100;
-      console.log(discount);
       totalPriceValue.innerText = parseInt(totalPrice) - discount;
     } else {
       alert("Invalid cupon");
