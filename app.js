@@ -1,92 +1,100 @@
+// accessories price set common function
+function priceCommonFun(event, selectValue, selectAmout, price) {
+  // get the element
+  const selectCost = document.getElementById(selectAmout + "-cost");
+  // get the element value
+  const selectBtnValue = event.target.value;
+  //   check element value or event value is equal
+  if (selectBtnValue == selectValue.val1) {
+    selectCostValue = price.price1;
+  } else if (selectBtnValue == selectValue.val2) {
+    selectCostValue = price.price2;
+  } else if (selectBtnValue == selectValue.val3) {
+    selectCostValue = price.price3;
+  }
+  //   inset value
+  selectCost.innerText = selectCostValue;
+}
+
+// get best price inner text
+const mainAmount = document.getElementById("main-price").innerText;
+
+// get total amount element
+const totalPrice = document.getElementById("total-price");
+const latesPrice = document.getElementById("lates-price");
+
+// total price calculate common function
 function totalPriceCommonFun() {
-  const mainCost = document.getElementById("main-cost").innerText;
-  const memoryCost = document.getElementById("extra-memoryCost").innerText;
+  // get all accessories inner text
+  const memoryCost = document.getElementById("memory-cost").innerText;
   const storageCost = document.getElementById("storage-cost").innerText;
   const deliveryCost = document.getElementById("delivery-cost").innerText;
-
-  const totalPrice =
-    parseInt(mainCost) +
+  //  store total price
+  const totalAmount =
+    parseInt(mainAmount) +
     parseInt(memoryCost) +
     parseInt(storageCost) +
     parseInt(deliveryCost);
-
-  document.getElementById("total-price").innerText = totalPrice;
-
-  // start bonus part
-  document.getElementById("totalPrice-bonus").innerText = totalPrice;
-
-  // pin matched
+  // set total price in element
+  totalPrice.innerText = totalAmount;
+  latesPrice.innerText = totalAmount;
 }
 
-document.getElementById("8gb-best").addEventListener("click", function () {
-  let normalMalMemory = document.getElementById("extra-memoryCost");
-
-  normalMalMemory.innerText = 0;
-  totalPriceCommonFun();
-});
-
-document.getElementById("16gb-memory").addEventListener("click", function () {
-  var extraMemry = document.getElementById("extra-memoryCost");
-
-  extraMemry.innerText = 180;
-  totalPriceCommonFun();
-});
-
-document.getElementById("best-storage").addEventListener("click", function () {
-  var normalStorage = document.getElementById("storage-cost");
-  normalStorage.innerText = 0;
-
-  totalPriceCommonFun();
-});
-
+// select memory button and events bubble
 document
-  .getElementById("extra-storageCost")
-  .addEventListener("click", function () {
-    var extraStorage = document.getElementById("storage-cost");
+  .getElementById("select-memory")
+  .addEventListener("click", function (event) {
+    const selectValue = { val1: "ram-8gb", val2: "ram-16gb" };
+    const price = { price1: 0, price2: 180 };
 
-    extraStorage.innerText = 100;
+    priceCommonFun(event, selectValue, "memory", price);
 
     totalPriceCommonFun();
   });
 
-document.getElementById("1tb-extra").addEventListener("click", function () {
-  var extraStorage = document.getElementById("storage-cost");
-
-  extraStorage.innerText = 180;
-
-  totalPriceCommonFun();
-});
-
-document.getElementById("shipping-cost").addEventListener("click", function () {
-  var normalDelivery = document.getElementById("delivery-cost");
-
-  normalDelivery.innerText = 0;
-
-  totalPriceCommonFun();
-});
-
+// select storage button and events bubble
 document
-  .getElementById("extradelvery-charge")
-  .addEventListener("click", function () {
-    var normalDelivery = document.getElementById("delivery-cost");
+  .getElementById("select-storage")
+  .addEventListener("click", function (event) {
+    const selectValue = {
+      val1: "ssd-256gb",
+      val2: "ssd-512gb",
+      val3: "ssd-1tb",
+    };
+    const price = { price1: 0, price2: 100, price3: 180 };
 
-    normalDelivery.innerText = 20;
+    priceCommonFun(event, selectValue, "storage", price);
 
     totalPriceCommonFun();
   });
 
+// select delivery button and events bubble
 document
-  .getElementById("apply-discount")
-  .addEventListener("click", function () {
-    const cuponInput = document.getElementById("cupon-input");
-    const totalPrice = document.getElementById("total-price").innerText;
-    const totalPriceValue = document.getElementById("totalPrice-bonus");
+  .getElementById("select-delivery")
+  .addEventListener("click", function (event) {
+    const selectValue = { val1: "free-delivery", val2: "fast-delivery" };
+    const price = { price1: 0, price2: 20 };
 
-    if (cuponInput.value == "stevekaku") {
-      const discount = (totalPrice * 20) / 100;
-      totalPriceValue.innerText = parseInt(totalPrice) - discount;
-    } else {
-      alert("Invalid cupon");
-    }
-    cuponInput.value = "";
+    priceCommonFun(event, selectValue, "delivery", price);
+
+    totalPriceCommonFun();
   });
+
+// get apply-cupon-button and click event
+document.getElementById("apply-cupon").addEventListener("click", function () {
+  // get input field element
+  const cuponInput = document.getElementById("cupon-input");
+  const totalPriceValue = parseInt(totalPrice.innerText);
+
+  //   check cupon code
+  if (cuponInput.value == "stevekaku") {
+    // discount price calculation
+    const discount = (totalPriceValue * 20) / 100;
+
+    // set lates price inner text
+    latesPrice.innerText = totalPriceValue - discount;
+  } else {
+    alert("Cupon code invalid");
+  }
+  cuponInput.value = "";
+});
